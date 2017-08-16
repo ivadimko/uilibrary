@@ -7,24 +7,41 @@ var sourcemaps      = require('gulp-sourcemaps');
 var autoprefixer    = require('gulp-autoprefixer');
 var notify          = require("gulp-notify");
 var concat          = require('gulp-concat');
+var bourbon         = require("bourbon").includePaths;
+var del             = require('del');
+var uglify          = require('gulp-uglify');
 
-gulp.task('js', function() {
+gulp.task('common-js', function() {
 	return gulp.src([
-		'./dev/assets/scripts/libs/jquery/*.js',
-		'./dev/assets/scripts/libs/**/*.js',
-		'./dev/assets/scripts/common.js', // Всегда в конце
+		'./dev/assets/scripts/common.js',
+		])
+	.pipe(concat('common.min.js'))
+	.pipe(uglify()) // Minimize JS
+	.pipe(gulp.dest('./dev/assets/scripts'));
+});
+
+gulp.task('js', ['common-js'], function() {
+	return gulp.src([
+		'./dev/assets/scripts/libs/jquery/dist/jquery.min.js', //Always at the beginning
+//-----------------------Include libraries-------------------------
+		'./dev/assets/scripts/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+//-----------------------------------------------------------------
+		'./dev/assets/scripts/common.min.js', //Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
+	.pipe(uglify()) // Minimize JS
 	.pipe(gulp.dest('./dev/assets/scripts'))
 	.pipe(browserSync.reload({stream: true}));
 });
+
+
 
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
 			baseDir: './dev'
 		},
-		browser: ["firefox"],
+		browser: ["google chrome", "firefox"],
 		notify: false
 	});
 });
@@ -32,8 +49,10 @@ gulp.task('browser-sync', function() {
 gulp.task('sass', function () {
   return gulp.src('./dev/assets/scss/**/*.scss')
   	.pipe(sourcemaps.init())
-    .pipe(sass().on("error", notify.onError()))
-    .pipe(autoprefixer(['last 2 versions', '> 5%', 'Firefox ESR', 'ie >= 10']))
+    .pipe(sass({
+    	includePaths: [bourbon]
+    }).on("error", notify.onError()))
+    .pipe(autoprefixer(['last 3 versions', '> 5%', 'Firefox ESR', 'ie >= 7']))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dev/assets/css'))
     .pipe(browserSync.reload({stream: true}));
@@ -41,11 +60,11 @@ gulp.task('sass', function () {
 
 gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 	gulp.watch('./dev/assets/scss/**/*.scss', ['sass']);
-	gulp.watch(['./dev/assets/scripts/**/*.js'], ['js']);
+	gulp.watch('./dev/assets/scripts/**/*.js', browserSync.reload);
 	gulp.watch('./dev/*.html', browserSync.reload);
 });
 
-gulp.task('build', ['removedist', 'sass', 'js'], function() {
+gulp.task('build', ['removerel', 'sass', 'js'], function() {
 
 	var buildFiles = gulp.src([
 		'./dev/*.html',
