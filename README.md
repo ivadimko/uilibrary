@@ -1,5 +1,5 @@
 # Start HTML Template by Vadim.Ilchenko
-**v1.0.2**  
+**v1.0.3**  
 ### Including new libraries:  
 write **bower install libraryname** in console
 - put src to library.js in **gulpfile.js**
@@ -19,3 +19,4 @@ write **bower install libraryname** in console
 ### Other includes:
 - bootstrap grid v4
 - mobile nav burger
+- font-awesome

@@ -60,7 +60,7 @@ gulp.task('watch', ['html', 'sass', 'js', 'browser-sync'], function() {
 	gulp.watch("./dev/src/**/*.html", ['html']);
 });
 
-gulp.task('build', ['removerel', 'sass', 'js'], function() {
+gulp.task('build', ['removerel', 'html', 'sass', 'js'], function() {
 
 	var buildFiles = gulp.src([
 		'./dev/*.html',
@@ -68,7 +68,9 @@ gulp.task('build', ['removerel', 'sass', 'js'], function() {
 
 	var buildCss = gulp.src([
 		'./dev/assets/css/main.css',
+		'./dev/assets/css/base.css',
 		]).pipe(gulp.dest('./rel/assets/css'));
+	
 
 	var buildJs = gulp.src([
 		'./dev/assets/scripts/scripts.min.js',
