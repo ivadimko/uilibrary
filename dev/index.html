@@ -1,26 +1,64 @@
 <!DOCTYPE html>
-<html lang="ru">
-
-<head>
-
-	<meta charset="utf-8">
-
-	<title>Title</title>
-	<meta name="description" content="site content">
-	<meta http-equiv="X-UA-Compatible" content="text/html">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3">
-
-	<link rel="shortcut icon" href="./assets/img/favicon/favicon.ico" type="image/x-icon">
-	<!-- <meta property="og:image" content="path/to/image.jpg"> -->
-
-	<link rel="stylesheet" href="./assets/css/main.css">
-
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title>Wordpress Starter Kit</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+<body class="home">
 
-<body>
+<header id="header" class="header">
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum unde pariatur, laudantium aliquid consectetur molestias vero quidem quas, voluptatibus nostrum!</p>
-	<script src="./assets/scripts/scripts.min.js"></script>
+    <nav class="header__nav" role="navigation">
+        <ul class="header__menu">
+            <li><a href="#section1">Секция 1</a></li>
+            <li><a href="#section2">Секция 2</a></li>
+            <li><a href="#section3">Секция 3</a></li>
+        </ul>
+    </nav>
 
+    <button class="burger header__burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+<div class="mobile-nav js_mobile-nav">
+    <nav>
+        <ul class="mobile-nav__menu">
+        </ul>
+    </nav>
+    <button class="burger mobile-nav__burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+
+<main id="main" role="main">
+
+    <div class="entry-content">
+        <div class="container">
+            <div class="row">
+                <div class="col">col</div>
+                <div class="col">col</div>
+                <div class="col">col</div>
+                <div class="col">col</div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer id="footer" class="footer">
+
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="assets/scripts/common.js"></script>
 </body>
 </html>

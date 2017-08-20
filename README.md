@@ -14,4 +14,8 @@ write **bower install libraryname** in console
 - gulp-uglify
 - browsersync
 - bourbon
-- rigger *(not enabled yet)*
+- rigger
+
+### Other includes:
+- bootstrap grid v4
+- mobile nav burger
