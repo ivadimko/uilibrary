@@ -1,5 +1,5 @@
 # Start HTML Template by Vadim.Ilchenko
-**v1.0.1**  
+**v1.0.2**  
 ### Including new libraries:  
 write **bower install libraryname** in console
 - put src to library.js in **gulpfile.js**

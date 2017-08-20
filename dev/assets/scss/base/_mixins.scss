@@ -1,3 +1,9 @@
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
 //-------------font face--------------------
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
 	@font-face { 
