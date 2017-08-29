@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head lang="ru">
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
     <title>Tittle</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/ui-library.css">
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
 <div class="body-wrapper">
 <header id="header" class="header">
 
-    <nav class="header__nav" role="navigation">
+    <nav class="header__nav">
         <ul class="header__menu">
             <li><a href="#section1">Секция 1</a></li>
             <li><a href="#section2">Секция 2</a></li>
@@ -40,8 +41,8 @@
     </button>
 </div>
 
-<main id="main" role="main">
-
+<main id="main">
+    
     <div class="entry-content">
         <div class="container">
             <div class="row">
@@ -52,8 +53,29 @@
             </div>
         </div>
     </div>
-    <i class="fa fa-battery-three-quarters" aria-hidden="true"></i>
-
+    <div><i class="fa fa-battery-three-quarters" aria-hidden="true"></i></div>
+    <h2 class="section__header">BASE ITEMS</h2>
+    <div class="container">
+        <div class="row no-gutters d-block">
+            <div class="buttons">
+                <div class="buttons__row">
+                    <div class="buttons__item">
+                        <a href="#" class="v-button v-button--lg">Load more</a>
+                    </div>
+                </div>
+                <div class="buttons__row">
+                        <div class="buttons__item">
+                            <a href="#" class="v-button v-button--md">Load more</a>
+                        </div>
+                </div>
+                <div class="buttons__row">
+                    <div class="buttons__item">
+                        <a href="#" class="v-button v-button--sm">Load more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 </div>
 <footer id="footer" class="footer">
