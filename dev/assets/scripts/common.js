@@ -1,4 +1,16 @@
 jQuery(document).ready(function ($) {
+//--------------Buttons----------------
+//--------Buttons hide heading---------
+$(document).on('click', '.button', function () {
+	
+	$('.item__heading').slideUp();
+	$(this).prev('.item__heading').slideToggle();
+	return false;
+});
+//-------------------------------------
+
+//-------------------------------------
+
 
 });
 jQuery(window).on('load', function () {

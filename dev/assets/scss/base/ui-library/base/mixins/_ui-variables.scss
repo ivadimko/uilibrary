@@ -1,7 +1,18 @@
 //-------------BUTTONS---------------
 
-$v-button__font:                      'roboto-example', $helvetica;
-$v-button__color--background:         #65abd0;
-$v-button__color--border:             #65abd0;
-$v-button__color--text:               #fff;
+$button__font:                      'roboto-example', $helvetica;
+
+$button__color--background:         #65abd0;
+$button__color--border:             #65abd0;
+$button__color--text:               #fff;
+$button__color--text-bd:            #65abd0;
+
+$button__border-radius--small:       7px;
+$button__border-radius--large:      40px;
+
+$button__border-width:               2px;
+//-----------------------------------
+
+//--------------FORMS----------------
+$form__color--button:               #24aa98;
 //-----------------------------------

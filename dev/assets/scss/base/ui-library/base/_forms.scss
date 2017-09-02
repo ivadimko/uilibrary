@@ -1,0 +1,15 @@
+@import "bourbon";
+@import "../../_variables.scss";
+@import "mixins/_ui-variables";
+
+.text-align{
+    &__left,
+    &__center,
+    &__right{
+        display: inline-block;
+        background-color: $form__color--button;
+        &:hover{
+            background-color: darken($form__color--button, 10%);
+        }
+    }
+}
