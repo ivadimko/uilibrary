@@ -12,8 +12,14 @@
     display: inline-block;
     box-sizing: border-box;
     cursor: pointer;
+    border: none;
+    vertical-align: top;
     &:hover{
         background-color: darken($button__color--background, 10%);
+    }
+    &--smpad{
+        padding-right: 20px !important;
+        padding-left: 20px !important;
     }
     &--form{
         background-color: $form__color--button;

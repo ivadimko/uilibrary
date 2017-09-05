@@ -1,15 +1,73 @@
 @import "bourbon";
+@import "../../_mixins.scss";
 @import "../../_variables.scss";
 @import "mixins/_ui-variables";
 
-.text-align{
-    &__left,
-    &__center,
-    &__right{
-        display: inline-block;
-        background-color: $form__color--button;
-        &:hover{
-            background-color: darken($form__color--button, 10%);
-        }
-    }
+.form{
+	&__input{
+		padding: 1.07rem 1.5rem;
+		color: $form__color--input;
+		@include placeholder($form__color--placeholder, $input__font);
+		font-family: $input__font;
+		font-size: 1.6rem;
+		border: $input__border--width solid  $input__border--color;
+		vertical-align: top;
+		transition: border-color $time ease;
+		width: 220px;
+		&:valid{
+			@extend .form__input:focus;
+		}
+		&:focus{
+			border-color: $input__border-focus--color;
+		}
+		&--left{
+			border-radius: $input__border--radius 0 0 $input__border--radius;
+			border-right: none;
+		}
+		&--center{
+			border-right: none;
+			border-left: none;
+		}
+	}
+}
+.select{
+	appearance: none;
+	padding-right: 30px !important;
+	&-wrap{
+		position: relative;
+	}
+	&__arrow{
+		font-size: 2rem;
+		position: absolute;
+		top: 0;
+		right: 11px;
+		color: $button__color--text;
+		cursor: pointer;
+	}
+}
+.search{
+	position: relative;
+	&__icon{
+		position: absolute;
+		left: 14px;
+		top: -2px;
+		font-size: 2rem;
+		color: $form__color--placeholder;
+	}
+	&__input{
+		padding-left: 40px;
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+			background:transparent url('../img/ui-library/forms/icon-cancel-search.png') left top no-repeat;
+			width: 20px;
+			height: 20px;
+			margin-right: 2px;
+			cursor: pointer;
+		}
+		&:valid{
+			&+ .search__icon{
+				color: $form__color--input;
+			}
+		}
+	}
 }

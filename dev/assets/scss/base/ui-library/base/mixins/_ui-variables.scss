@@ -1,6 +1,7 @@
 //-------------BUTTONS---------------
 
 $button__font:                      'roboto-example', $helvetica;
+$input__font:                       'roboto-example', $helvetica;
 
 $button__color--background:         #65abd0;
 $button__color--border:             #65abd0;
@@ -15,4 +16,12 @@ $button__border-width:               2px;
 
 //--------------FORMS----------------
 $form__color--button:               #24aa98;
+
+$form__color--input:                #383737;
+$form__color--placeholder:          #b4bbc2;
+
+$input__border--color:              #c6ccd2;
+$input__border-focus--color:        #65abd0;                
+$input__border--width:                2px;
+$input__border--radius:               7px;
 //-----------------------------------
